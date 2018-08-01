@@ -79,7 +79,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
+            <li><a href="<?php echo "index.php?area=cad_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Editar</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Listar</a></li>
           </ul>
@@ -108,6 +108,18 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="index.html"><i class="fa fa-circle-o"></i> Criar</a></li>
+          </ul>
+        </li>
+        <!-- ITEM MENU -->
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-exclamation-circle"></i> <span>Advertência</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="index.html"><i class="fa fa-circle-o"></i>Lançar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
