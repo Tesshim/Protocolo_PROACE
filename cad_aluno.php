@@ -12,7 +12,7 @@ include('dbconnection.php');
               <div class="box-body">
                 <div class="form-group">
                   <label for="nome_aluno">Nome Aluno</label>
-                  <input required name="nome_aluno"type="text" class="form-control" id="nome_aluno" placeholder="NOME">
+                  <input required name="nome_aluno" type="text" class="form-control" id="nome_aluno" placeholder="NOME">
                 </div>
               </div>
 
