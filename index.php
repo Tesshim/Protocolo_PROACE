@@ -97,7 +97,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
+            <li><a href="<?php echo "index.php?area=cad_projetos"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Editar</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Listar</a></li>
           </ul>
@@ -158,8 +158,13 @@
       <?php 
       ini_set( 'display_errors', 0 );
       switch ($_GET['area']) {
+
         case 'cad_aluno':
            include('cad_aluno.php') ; 
+          break;
+
+          case 'cad_projetos':
+           include('cad_projetos.php') ; 
           break;             
         
         default:
