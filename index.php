@@ -84,8 +84,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo "index.php?area=cad_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Editar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Listar</a></li>
+            <li><a href="<?php echo "index.php?area=list_aluno"?>"><i class="fa fa-circle-o"></i> Listar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -173,7 +172,11 @@
 
           case 'cad_advertencia':
            include('cad_advertencia.php') ; 
-          break;               
+          break;
+
+          case 'list_aluno':
+           include('list_aluno.php') ; 
+          break;                
         
         default:
             include('home.php');
