@@ -111,7 +111,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Criar</a></li>
+            <li><a href="<?php echo "index.php?area=cad_vinculacao"?>"><i class="fa fa-circle-o"></i> Criar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -123,7 +123,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i>Lançar</a></li>
+            <li><a href="<?php echo "index.php?area=cad_advertencia"?>"><i class="fa fa-circle-o"></i>Lançar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -165,7 +165,15 @@
 
           case 'cad_projetos':
            include('cad_projetos.php') ; 
-          break;             
+          break;
+
+          case 'cad_vinculacao':
+           include('cad_vinculacao.php') ; 
+          break;
+
+          case 'cad_advertencia':
+           include('cad_advertencia.php') ; 
+          break;               
         
         default:
             include('home.php');
