@@ -97,8 +97,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo "index.php?area=cad_projetos"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Editar</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Listar</a></li>
+            <li><a href="<?php echo "index.php?area=list_projetos"?>"><i class="fa fa-circle-o"></i> Listar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -176,7 +175,11 @@
 
           case 'list_aluno':
            include('list_aluno.php') ; 
-          break;                
+          break;
+
+          case 'list_projetos':
+           include('list_projetos.php') ; 
+          break;                  
         
         default:
             include('home.php');
