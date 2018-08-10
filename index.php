@@ -179,6 +179,14 @@
 
           case 'list_projetos':
            include('list_projetos.php') ; 
+          break;
+
+          case 'edit_aluno':
+           include('edit_aluno.php') ; 
+          break;
+
+          case 'edit_projeto':
+           include('edit_projeto.php') ; 
           break;                  
         
         default:

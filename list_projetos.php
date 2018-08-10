@@ -25,7 +25,7 @@ $q_cliente = mysqli_query($conn, $sql);
                   <th>Locação</th>
                   <th>Início</th>
                   <th>Termino</th>
-                  <th>Ações</th>
+                  <th>Ação</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -38,12 +38,22 @@ $q_cliente = mysqli_query($conn, $sql);
                         <td><?php echo ($linha_cliente["titulo"]);?> </td>
                         <td><?php echo ($linha_cliente["coordenador"]);?> </td>
                         <td><?php echo ($linha_cliente["locacao"]);?> </td>
-                        <td><?php echo ($linha_cliente["vigencia_inicio"]);?> </td>
-                        <td><?php echo ($linha_cliente["vigencia_termino"]);?> </td>
-                        <td>
-                          <a href="index.php?area=edit_aluno&id_aluno=<?php echo $linha_cliente['id_aluno']; ?>"><button name="editar" type="submit" class="btn btn-primary">Editar</button></a>
+                        <td><?php 
 
-                          <a href="del_aluno.php?id_aluno=<?php echo $linha_cliente['id_aluno']; ?>"><button name="exluir" type="submit" class="btn btn-danger">Excluir</button></a></td>
+                              $data = $linha_cliente["vigencia_inicio"];
+                              $nova_data = explode("-", $data);
+                              echo $nova_data[2].'/'.$nova_data[1].'/'.$nova_data[0]?> 
+
+                        </td>
+                        <td><?php 
+
+                              $data = $linha_cliente["vigencia_termino"];
+                              $nova_data = explode("-", $data);
+                              echo $nova_data[2].'/'.$nova_data[1].'/'.$nova_data[0]?> 
+
+                        </td>
+                        <td>
+                          <a href="index.php?area=edit_projeto&id_projeto=<?php echo $linha_cliente['id_projeto']; ?>"><button name="editar" type="submit" class="btn btn-primary">Editar</button></a> </td>
                         
 
                       </tr>
@@ -59,7 +69,7 @@ $q_cliente = mysqli_query($conn, $sql);
                   <th>Locação</th>
                   <th>Início</th>
                   <th>Termino</th>
-                  <th>Ações</th>
+                  <th>Ação</th>
                 </tr>
                 </tfoot>
               </table>
