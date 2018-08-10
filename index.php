@@ -187,6 +187,10 @@
 
           case 'edit_projeto':
            include('edit_projeto.php') ; 
+          break;
+
+          case 'rel_aluno':
+           include('rel_aluno.php') ; 
           break;                  
         
         default:

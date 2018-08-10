@@ -39,7 +39,11 @@ $q_cliente = mysqli_query($conn, $sql);
                         <td><?php echo ($linha_cliente["matricula"]);?> </td>
                         <td><?php echo ($linha_cliente["curso"]);?> </td>
                         <td>
-                          <a href="index.php?area=edit_aluno&id_aluno=<?php echo $linha_cliente['id_aluno']; ?>"><button name="editar" type="submit" class="btn btn-primary">Editar</button></a> </td>
+                          <a href="index.php?area=edit_aluno&id_aluno=<?php echo $linha_cliente['id_aluno']; ?>"><button name="editar" type="submit" class="btn btn-primary">Editar</button></a> 
+
+                          <a href="index.php?area=rel_aluno&id_aluno=<?php echo $linha_cliente['id_aluno']; ?>"><button name="editar" type="submit" class="btn btn-success">Relatório</button></a>
+
+                        </td>
                         
 
                       </tr>
