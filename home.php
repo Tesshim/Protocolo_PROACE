@@ -64,8 +64,12 @@
                 $documento = $_POST['documento'];
                 $coment = $_POST['coment'];
 
+
+                date_default_timezone_set('America/Sao_Paulo');
+                $date = date('Y-m-d');
+
                 $sql = "INSERT INTO tb_documentos
-                (id_aluno, operador, documento, comentario) values ('$nome', '$operador', '$documento', '$coment')";
+                (id_aluno, operador, documento, comentario, data) values ('$nome', '$operador', '$documento', '$coment', '$date')";
 
                 
 
