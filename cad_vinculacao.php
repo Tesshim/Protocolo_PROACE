@@ -55,6 +55,11 @@
                 </div>
               </div>
 
+                <div class="form-group">
+                  <label for="dur">Duração</label>
+                  <input required name="dur" type="text" class="form-control" id="dur" placeholder="NUMERO DE MESES">
+                </div>
+
               </div>
               <!-- /.box-body -->
 
@@ -69,9 +74,10 @@
                 $aluno = $_POST['aluno'];
                 $projeto = $_POST['projeto'];
                 $data = $_POST['data'];
+                $dur = $_POST['dur'];
 
                 $sql = "INSERT INTO tb_vinculacao
-                (fk_aluno, fk_projeto, data) values ('$aluno', '$projeto', '$data')";
+                (fk_aluno, fk_projeto, data, duracao) values ('$aluno', '$projeto', '$data', '$dur')";
 
                 
 
