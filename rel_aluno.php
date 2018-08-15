@@ -7,7 +7,7 @@
     $q_aluno = mysqli_query($conn, $sql);
     $aluno = mysqli_fetch_array($q_aluno, MYSQLI_BOTH);
 
-    $sql_projetos = "SELECT tb_vinculacao.`data`, tb_vinculacao.duracao, tb_projeto.titulo, tb_projeto.coordenador, tb_projeto.locacao FROM tb_aluno INNER JOIN tb_vinculacao ON tb_vinculacao.fk_aluno = tb_aluno.id_aluno INNER JOIN tb_projeto ON tb_vinculacao.fk_projeto = tb_projeto.id_projeto WHERE tb_vinculacao.fk_aluno = tb_aluno.id_aluno AND tb_vinculacao.fk_projeto = tb_projeto.id_projeto";
+    $sql_projetos = "SELECT tb_vinculacao.`data`, tb_projeto.titulo, tb_projeto.coordenador, tb_projeto.locacao FROM tb_aluno INNER JOIN tb_vinculacao ON tb_vinculacao.fk_aluno = tb_aluno.id_aluno INNER JOIN tb_projeto ON tb_vinculacao.fk_projeto = tb_projeto.id_projeto WHERE tb_vinculacao.fk_aluno = tb_aluno.id_aluno AND tb_vinculacao.fk_projeto = tb_projeto.id_projeto";
     $q_projetos = mysqli_query($conn, $sql_projetos);
 
     $sql_advertencia = "SELECT tb_advertencia.`data` FROM tb_aluno INNER JOIN tb_advertencia ON tb_advertencia.fk_aluno = tb_aluno.id_aluno WHERE tb_advertencia.fk_aluno = tb_aluno.id_aluno";
@@ -82,8 +82,13 @@
         </tr>
         <tr>
             <?php
+            $contador = 0;
                while ($resultado = mysqli_fetch_array($q_documento,MYSQLI_BOTH)) 
                {
+
+                
+                if($resultado["documento"] == 'Declaração de Frequência')
+                    $contador++;
                  ?>
             <tr>  
                 <td><?php echo ($resultado["id_protocolo"]);?> </td>
@@ -122,7 +127,7 @@
             <th>Coordenador</th>
             <th>Locação</th>
             <th>Data</th>
-            <th>Duração/meses</th>
+            <th>/</th>
         </tr>
         <tr>
             <?php
@@ -137,19 +142,18 @@
                          $data = $resultado["data"];
                          $nova_data = explode("-", $data);
                          echo $nova_data[2].'/'.$nova_data[1].'/'.$nova_data[0]?> 
-                </td>
-                <td><?php echo ($resultado["duracao"]);?> </td>                     
+                </td>                  
 
             </tr>
 
                 <?php } ?>
 
             <tr>
-                <th>Titulo</th>
-                <th>Coordenador</th>
-                <th>Locação</th>
-                <th>Data</th>
-                <th>Duração/meses</th>
+                <th>Total de Horas Desempenhadas</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th> <?php echo ($contador*48);?> </th>
             </tr>
 
         </tr>
