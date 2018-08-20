@@ -133,7 +133,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i></a></li>
+            <li><a href="<?php echo "index.php?area=rel_frequencias"?>"><i class="fa fa-circle-o"></i>Frequencias do mês</a></li>
           </ul>
         </li>
       </ul>
@@ -190,7 +190,11 @@
           break;
 
           case 'rel_aluno':
-           include('rel_aluno.php') ; 
+           include('rel_aluno.php') ;  
+          break;
+
+          case 'rel_frequencias':
+           include('rel_frequencias.php') ;
           break;                  
         
         default:
