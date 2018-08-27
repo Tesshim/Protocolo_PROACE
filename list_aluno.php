@@ -21,7 +21,6 @@ $q_cliente = mysqli_query($conn, $sql);
                 <tr>
                   <th>ID Aluno</th>
                   <th>Nome Aluno</th>
-                  <th>CPF</th>
                   <th>Matricula</th>
                   <th>Curso</th>
                   <th>Ação</th>
@@ -35,7 +34,6 @@ $q_cliente = mysqli_query($conn, $sql);
                       <tr>
                         <td><?php echo ($linha_cliente["id_aluno"]);?> </td>
                         <td><?php echo ($linha_cliente["nome_aluno"]);?> </td>
-                        <td><?php echo ($linha_cliente["cpf"]);?> </td>
                         <td><?php echo ($linha_cliente["matricula"]);?> </td>
                         <td><?php echo ($linha_cliente["curso"]);?> </td>
                         <td>
@@ -55,7 +53,6 @@ $q_cliente = mysqli_query($conn, $sql);
                 <tr>
                   <th>ID Aluno</th>
                   <th>Nome Aluno</th>
-                  <th>CPF</th>
                   <th>Matricula</th>
                   <th>Curso</th>
                   <th>Ação</th>

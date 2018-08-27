@@ -18,8 +18,8 @@ include('dbconnection.php');
 
               <div class="box-body">
                 <div class="form-group">
-                  <label for="cpf">CPF</label>
-                  <input required name="cpf" type="text" class="form-control" id="cpf" placeholder="CPF">
+                  <label for="id_aluno">CPF</label>
+                  <input required name="id_aluno" type="text" class="form-control" id="id_aluno" placeholder="CPF">
                 </div>
               </div>
 
@@ -48,12 +48,12 @@ include('dbconnection.php');
           <?php  
           		if (isset($_POST['enviar'])) {
           			$nome = $_POST['nome_aluno'];
-          			$cpf = $_POST['cpf'];
+          			$id_aluno = $_POST['id_aluno'];
                 $matricula = $_POST['matricula'];
                 $curso = $_POST['curso'];
 
           			$sql = "INSERT INTO tb_aluno
-          			(nome_aluno, cpf, matricula, curso) values ('$nome', '$cpf', '$matricula', '$curso')";
+          			(nome_aluno, id_aluno, matricula, curso) values ('$nome', '$id_aluno', '$matricula', '$curso')";
 
           			mysqli_query($conn, $sql);
 

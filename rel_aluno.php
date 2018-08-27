@@ -7,13 +7,13 @@
     $q_aluno = mysqli_query($conn, $sql);
     $aluno = mysqli_fetch_array($q_aluno, MYSQLI_BOTH);
 
-    $sql_projetos = "SELECT tb_vinculacao.`data`, tb_projeto.titulo, tb_projeto.coordenador, tb_projeto.locacao FROM tb_aluno INNER JOIN tb_vinculacao ON tb_vinculacao.fk_aluno = tb_aluno.id_aluno INNER JOIN tb_projeto ON tb_vinculacao.fk_projeto = tb_projeto.id_projeto WHERE tb_vinculacao.fk_aluno = tb_aluno.id_aluno AND tb_vinculacao.fk_projeto = tb_projeto.id_projeto";
+    $sql_projetos = "SELECT tb_projeto.titulo, tb_projeto.coordenador, tb_projeto.locacao, tb_vinculacao.`data` FROM tb_aluno INNER JOIN tb_vinculacao ON tb_vinculacao.fk_aluno = tb_aluno.id_aluno INNER JOIN tb_projeto ON tb_vinculacao.fk_projeto = tb_projeto.id_projeto WHERE tb_vinculacao.fk_aluno = $id_aluno AND tb_vinculacao.fk_projeto = tb_projeto.id_projeto";
     $q_projetos = mysqli_query($conn, $sql_projetos);
 
-    $sql_advertencia = "SELECT tb_advertencia.`data` FROM tb_aluno INNER JOIN tb_advertencia ON tb_advertencia.fk_aluno = tb_aluno.id_aluno WHERE tb_advertencia.fk_aluno = tb_aluno.id_aluno";
+    $sql_advertencia = "SELECT tb_advertencia.`data` FROM tb_aluno INNER JOIN tb_advertencia ON tb_advertencia.fk_aluno = tb_aluno.id_aluno WHERE tb_advertencia.fk_aluno = $id_aluno";
     $q_advertencia = mysqli_query($conn, $sql_advertencia);
 
-    $sql_documento = "SELECT tb_documentos.id_protocolo, tb_documentos.operador, tb_documentos.documento, tb_documentos.comentario, tb_documentos.`data` FROM tb_aluno INNER JOIN tb_documentos ON tb_documentos.id_aluno = tb_aluno.id_aluno WHERE tb_documentos.id_aluno = tb_aluno.id_aluno ";
+    $sql_documento = "SELECT tb_documentos.id_protocolo, tb_documentos.operador, tb_documentos.documento, tb_documentos.comentario, tb_documentos.`data` FROM tb_aluno INNER JOIN tb_documentos ON tb_documentos.fk_aluno = tb_aluno.id_aluno WHERE tb_documentos.fk_aluno = $id_aluno ";
     $q_documento = mysqli_query($conn, $sql_documento);
 
 ?>
@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td><?php echo ($aluno["nome_aluno"]); ?> </td>
-            <td><?php echo ($aluno["cpf"]); ?> </td>  
+            <td><?php echo ($aluno["id_aluno"]); ?> </td>  
             <td><?php echo ($aluno["matricula"]); ?> </td> 
             <td><?php echo ($aluno["curso"]); ?> </td>                       
         </tr>

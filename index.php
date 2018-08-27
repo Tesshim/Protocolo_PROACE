@@ -85,6 +85,7 @@
           <ul class="treeview-menu">
             <li><a href="<?php echo "index.php?area=cad_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
             <li><a href="<?php echo "index.php?area=list_aluno"?>"><i class="fa fa-circle-o"></i> Listar</a></li>
+            <li><a href="<?php echo "index.php?area=cada_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar por arquivo</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -159,6 +160,10 @@
 
         case 'cad_aluno':
            include('cad_aluno.php') ; 
+          break;
+
+          case 'cada_aluno':
+           include('cada_aluno.php') ; 
           break;
 
           case 'cad_projetos':

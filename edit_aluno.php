@@ -24,8 +24,8 @@
 
               <div class="box-body">
                 <div class="form-group">
-                  <label for="cpf">CPF</label>
-                  <input required name="cpf" type="text" class="form-control" id="cpf" value="<?php echo $aluno['cpf']; ?>">
+                  <label for="id_aluno">CPF</label>
+                  <input required name="id_aluno" type="text" class="form-control" id="id_aluno" value="<?php echo $aluno['id_aluno']; ?>">
                 </div>
               </div>
 
@@ -54,11 +54,11 @@
           <?php  
               if (isset($_POST['salvar'])) {
                 $nome = $_POST['nome_aluno'];
-                $cpf = $_POST['cpf'];
+                $id_aluno = $_POST['id_aluno'];
                 $matricula = $_POST['matricula'];
                 $curso = $_POST['curso'];
 
-                $sql_editar = "UPDATE tb_aluno SET nome_aluno = '$nome', cpf = '$cpf', matricula = '$matricula', curso = '$curso' WHERE id_aluno = '$id_aluno'";
+                $sql_editar = "UPDATE tb_aluno SET nome_aluno = '$nome', id_aluno = '$id_aluno', matricula = '$matricula', curso = '$curso' WHERE id_aluno = '$id_aluno'";
 
                 mysqli_query($conn, $sql_editar);
 

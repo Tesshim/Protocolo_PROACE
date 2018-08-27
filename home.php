@@ -69,7 +69,7 @@
                 $date = date('Y-m-d');
 
                 $sql = "INSERT INTO tb_documentos
-                (id_aluno, operador, documento, comentario, data) values ('$nome', '$operador', '$documento', '$coment', '$date')";
+                (fk_aluno, operador, documento, comentario, data) values ('$nome', '$operador', '$documento', '$coment', '$date')";
 
                 
 

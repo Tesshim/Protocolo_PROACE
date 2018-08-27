@@ -6,7 +6,7 @@
     $termino = $data."-31";
     $var = "Declaração de Frequência";
 
-    $sql_declaracao = "SELECT tb_aluno.nome_aluno, tb_aluno.matricula, tb_documentos.documento, tb_documentos.comentario, tb_documentos.`data` FROM tb_aluno INNER JOIN tb_documentos ON tb_documentos.id_aluno = tb_aluno.id_aluno WHERE tb_documentos.documento = '$var' AND  data   BETWEEN '$inicio' and '$termino'";
+    $sql_declaracao = "SELECT tb_aluno.nome_aluno, tb_aluno.matricula, tb_documentos.documento, tb_documentos.comentario, tb_documentos.`data` FROM tb_aluno INNER JOIN tb_documentos ON tb_documentos.fk_aluno = tb_aluno.id_aluno WHERE tb_documentos.documento = '$var' AND  data   BETWEEN '$inicio' and '$termino'";
     $q_declaracao = mysqli_query($conn, $sql_declaracao);
 
 
