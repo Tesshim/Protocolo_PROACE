@@ -84,8 +84,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="<?php echo "index.php?area=cad_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar</a></li>
-            <li><a href="<?php echo "index.php?area=list_aluno"?>"><i class="fa fa-circle-o"></i> Listar</a></li>
             <li><a href="<?php echo "index.php?area=cada_aluno"?>"><i class="fa fa-circle-o"></i> Cadastrar por arquivo</a></li>
+            <li><a href="<?php echo "index.php?area=list_aluno"?>"><i class="fa fa-circle-o"></i> Listar</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->

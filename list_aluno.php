@@ -30,7 +30,7 @@ $q_cliente = mysqli_query($conn, $sql);
                   <?php
                     while ($linha_cliente = mysqli_fetch_array($q_cliente,MYSQLI_BOTH)) 
                     { ?>
-
+                      
                       <tr>
                         <td><?php echo ($linha_cliente["id_aluno"]);?> </td>
                         <td><?php echo ($linha_cliente["nome_aluno"]);?> </td>

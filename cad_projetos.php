@@ -74,9 +74,9 @@ include('dbconnection.php');
           			$sql = "INSERT INTO tb_projeto
           			(titulo, coordenador, locacao, vigencia_inicio, vigencia_termino) values ('$titulo', '$coordenador', '$unidade', '$iniv', '$termv')";
 
-          			mysqli_query($conn, $sql);
+          			$aux = mysqli_query($conn, $sql);
 
-          			if($conn != 0)	
+          			if($aux)	
           			{
 	          			echo '<div class="alert alert-success" role="alert">
 	  					Projeto cadastrado com sucesso!

@@ -55,20 +55,20 @@ include('dbconnection.php');
           			$sql = "INSERT INTO tb_aluno
           			(nome_aluno, id_aluno, matricula, curso) values ('$nome', '$id_aluno', '$matricula', '$curso')";
 
-          			mysqli_query($conn, $sql);
+          			$aux = mysqli_query($conn, $sql);
 
-          			if($conn != 0)	
+          			if($aux)	
           			{
 	          			echo '<div class="alert alert-success" role="alert">
-	  					Aluno cadastrado com sucesso!
-						</div>';
-					} 
-					else
-					{
-						echo '<div class="alert alert-danger" role="alert">
-	  					Aluno não cadastrado!
-						</div>';
-					}
+    	  					      Aluno cadastrado com sucesso!
+    						        </div>';
+					     } 
+					     else
+    					{
+    						echo '<div class="alert alert-danger" role="alert">
+        	  					Aluno não cadastrado!
+        						  </div>';
+    					}
           		}
 
           ?>
