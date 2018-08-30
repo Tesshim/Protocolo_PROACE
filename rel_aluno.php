@@ -16,6 +16,9 @@
     $sql_documento = "SELECT tb_documentos.id_protocolo, tb_documentos.operador, tb_documentos.documento, tb_documentos.comentario, tb_documentos.`data` FROM tb_aluno INNER JOIN tb_documentos ON tb_documentos.fk_aluno = tb_aluno.id_aluno WHERE tb_documentos.fk_aluno = $id_aluno ";
     $q_documento = mysqli_query($conn, $sql_documento);
 
+    $sql_beneficio = "SELECT tb_beneficio.beneficio, tb_beneficio.`data` FROM tb_beneficio WHERE tb_beneficio.fk_aluno = $id_aluno";
+    $q_beneficio = mysqli_query($conn, $sql_beneficio);
+
 ?>
 
 <div align="center">
@@ -34,6 +37,40 @@
             <td><?php echo ($aluno["id_aluno"]); ?> </td>  
             <td><?php echo ($aluno["matricula"]); ?> </td> 
             <td><?php echo ($aluno["curso"]); ?> </td>                       
+        </tr>
+</table>
+
+<div align="center">
+    <h4><b>Benefícios Recebidos</b></h4>
+</div>
+
+<table class="table table-striped">
+        <tr>
+            <th>Benefício</th>
+            <th>Data</th>
+        </tr>
+        <tr>
+            <?php
+               while ($resultado = mysqli_fetch_array($q_beneficio,MYSQLI_BOTH)) 
+               {
+                 ?>
+            <tr>  
+                <td><?php echo ($resultado["beneficio"]);?> </td>
+                <td><?php 
+                         $data = $resultado["data"];
+                         $nova_data = explode("-", $data);
+                         echo $nova_data[2].'/'.$nova_data[1].'/'.$nova_data[0]?> 
+                </td>                     
+
+            </tr>
+
+                <?php } ?>
+
+            <tr>
+                <th>Benefício</th>
+                <th>Data</th>
+            </tr>
+
         </tr>
 </table>
 

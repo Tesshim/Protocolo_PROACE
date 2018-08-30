@@ -19,7 +19,7 @@ $q_cliente = mysqli_query($conn, $sql);
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
-                  <th>ID Aluno</th>
+                  <th>ID Aluno(CPF)</th>
                   <th>Nome Aluno</th>
                   <th>Matricula</th>
                   <th>Curso</th>
@@ -51,7 +51,7 @@ $q_cliente = mysqli_query($conn, $sql);
                 </tbody>
                 <tfoot>
                 <tr>
-                  <th>ID Aluno</th>
+                  <th>ID Aluno(CPF)</th>
                   <th>Nome Aluno</th>
                   <th>Matricula</th>
                   <th>Curso</th>

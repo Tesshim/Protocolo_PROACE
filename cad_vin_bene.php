@@ -11,7 +11,7 @@
 
 <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">VINCULAÇÃO DE PROJETO</h3>
+              <h3 class="box-title">VINCULAÇÃO DE BENEFÍCIO</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
@@ -32,18 +32,14 @@
               </div>
 
               <div class="form-group">
-                <label>Projeto</label>
-                <select name="projeto" id="projeto" class="form-control select2 <?php echo $class;?>" style="width: 100%;">
-                  <?php 
-
-                while($proj_select = mysqli_fetch_array($sql_proj_select, MYSQLI_BOTH))
-                { ?>
-
-                    <option value="<?php echo $proj_select['id_projeto']; ?>"><?php echo $proj_select['titulo'];?></option>
-
-               <?php } ?>
-                </select>
-              </div>
+                  <label>Benefícios</label>
+                  <select name="beneficio" id="beneficio" class="form-control">
+                    <option>Moradia</option>
+                    <option>Manutenção</option>
+                    <option>Material Pedagógico</option>
+                    <option>Creche</option>
+                  </select>
+                </div>
 
                 <div class="form-group">
                 <label for="data">Data:</label>
@@ -67,11 +63,11 @@
           <?php  
               if (isset($_POST['enviar'])) {
                 $aluno = $_POST['aluno'];
-                $projeto = $_POST['projeto'];
+                $beneficio = $_POST['beneficio'];
                 $data = $_POST['data'];
 
-                $sql = "INSERT INTO tb_vinculacao
-                (fk_aluno, fk_projeto, data) values ('$aluno', '$projeto', '$data')";
+                $sql = "INSERT INTO tb_beneficio
+                (fk_aluno, beneficio, data) values ('$aluno', '$beneficio', '$data')";
 
                 
 

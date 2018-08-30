@@ -110,7 +110,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="<?php echo "index.php?area=cad_vinculacao"?>"><i class="fa fa-circle-o"></i> Criar</a></li>
+            <li><a href="<?php echo "index.php?area=cad_vinculacao"?>"><i class="fa fa-circle-o"></i>Aluno/Projeto</a></li>
+            <li><a href="<?php echo "index.php?area=cad_vin_bene"?>"><i class="fa fa-circle-o"></i>Aluno/Beneficio</a></li>
           </ul>
         </li>
         <!-- ITEM MENU -->
@@ -176,6 +177,10 @@
 
           case 'cad_advertencia':
            include('cad_advertencia.php') ; 
+          break;
+
+          case 'cad_vin_bene':
+           include('cad_vin_bene.php') ; 
           break;
 
           case 'list_aluno':
